@@ -1,0 +1,128 @@
+QuestaSim-64 qrun 2024.3_1 Utility 2024.10 Oct 17 2024
+Start time: 17:30:21 on May 08,2025
+qrun -batch -access=rw+/. -timescale 1ns/1ns -mfcu design.sv testbench.sv -voptargs="+acc=npr" -do " run -all; exit" 
+Creating library 'qrun.out/work'.
+QuestaSim-64 vlog 2024.3_1 Compiler 2024.10 Oct 17 2024
+Start time: 17:30:21 on May 08,2025
+vlog -timescale 1ns/1ns -mfcu design.sv testbench.sv -work qrun.out/work -statslog qrun.out/stats_log -writesessionid "+qrun.out/top_dus" -csession=incr 
+-- Compiling module reg_file
+-- Compiling module PC
+-- Compiling module instr_ROM
+-- Compiling module dat_mem
+-- Compiling module alu
+-- Compiling module Control
+-- Compiling module top_level
+-- Compiling module alu_tb
+
+Top level modules:
+	top_level
+	alu_tb
+End time: 17:30:21 on May 08,2025, Elapsed time: 0:00:00
+Errors: 0, Warnings: 0
+QuestaSim-64 vopt 2024.3_1 Compiler 2024.10 Oct 17 2024
+** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility. The +acc switch would be deprecated in a future release.
+Start time: 17:30:21 on May 08,2025
+vopt -access=rw+/. -timescale 1ns/1ns -mfcu "+acc=npr" -findtoplevels qrun.out/work+1+ -work qrun.out/work -statslog qrun.out/stats_log -csession=incr -o qrun_opt -csessionid=2 
+
+Top level modules:
+	alu_tb
+	top_level
+
+Analyzing design...
+-- Loading module alu_tb
+-- Loading module top_level
+-- Loading module PC
+-- Loading module instr_ROM
+-- Loading module Control
+-- Loading module reg_file
+-- Loading module alu
+-- Loading module dat_mem
+Optimizing 8 design-units (inlining 0/9 module instances):
+-- Optimizing module alu_tb(fast)
+-- Optimizing module top_level(fast)
+-- Optimizing module Control(fast)
+-- Optimizing module alu(fast)
+-- Optimizing module reg_file(fast)
+-- Optimizing module PC(fast)
+-- Optimizing module instr_ROM(fast)
+-- Optimizing module dat_mem(fast)
+Optimized design name is qrun_opt
+End time: 17:30:21 on May 08,2025, Elapsed time: 0:00:00
+Errors: 0, Warnings: 1
+# vsim -batch -lib qrun.out/work -do " run -all; exit" -statslog qrun.out/stats_log qrun_opt -appendlog -l qrun.log 
+# Start time: 17:30:21 on May 08,2025
+# //  Questa Sim-64
+# //  Version 2024.3_1 linux_x86_64 Oct 17 2024
+# //
+# // Unpublished work. Copyright 2024 Siemens
+# //
+# // This material contains trade secrets or otherwise confidential information
+# // owned by Siemens Industry Software Inc. or its affiliates (collectively,
+# // "SISW"), or its licensors. Access to and use of this information is strictly
+# // limited as set forth in the Customer's applicable agreements with SISW.
+# //
+# // This material may not be copied, distributed, or otherwise disclosed outside
+# // of the Customer's facilities without the express written permission of SISW,
+# // and may not be used in any way not expressly authorized by SISW.
+# //
+# Loading sv_std.std
+# Loading work.alu_tb(fast)
+# Loading work.alu(fast)
+# Loading work.top_level(fast)
+# Loading work.PC(fast)
+# Loading work.instr_ROM(fast)
+# Loading work.Control(fast)
+# Loading work.reg_file(fast)
+# Loading work.dat_mem(fast)
+# ** Warning: (vsim-3015) [PCDPC] - Port size (4) does not match connection size (8) for port 'wr_addr'. The port definition is at: reg_file.sv(9).
+#    Time: 0 ns  Iteration: 0  Instance: /top_level/rf1 File: top_level.sv Line: 108
+# ** Warning: (vsim-3015) [PCDPC] - Port size (4) does not match connection size (3) for port 'rd_addrA'. The port definition is at: reg_file.sv(10).
+#    Time: 0 ns  Iteration: 0  Instance: /top_level/rf1 File: top_level.sv Line: 108
+# ** Warning: (vsim-3015) [PCDPC] - Port size (4) does not match connection size (1) for port 'rd_addrB'. The port definition is at: reg_file.sv(11).
+#    Time: 0 ns  Iteration: 0  Instance: /top_level/rf1 File: top_level.sv Line: 108
+# 
+# run -all
+# ** Warning: (vsim-7) Failed to open readmem file "mach_code.txt" in read mode.
+# No such file or directory. (errno = ENOENT)    : instr_ROM.sv(10)
+#    Time: 0 ns  Iteration: 0  Instance: /top_level/ir1
+# TEST: ADD, no c_out
+# Expected: a=18 b=49 rslt=67 out=0 | Actual: a=18 b=49 rslt=67 out=0
+#  
+# TEST: ADD with c_out 1
+# Expected: a=255 b=1 rslt=0 out=1 | Actual: a=255 b=1 rslt=0 out=1
+#  
+# TEST: ADD with c_out 2
+# Expected: a=255 b=255 rslt=254 out=1 | Actual: a=255 b=255 rslt=254 out=1
+#  
+# TEST: CMP equals
+# Expected: a=27 b=27 rslt=0 out=1 | Actual: a=27 b=27 rslt=0 out=1
+#  
+# TEST: CMP not equals
+# Expected: a=27 b=26 rslt=0 out=0 | Actual: a=27 b=26 rslt=0 out=0
+#  
+# TEST: MOVL
+# Expected: a=27 b=26 rslt=26 out=0 | Actual: a=27 b=26 rslt=26 out=0
+#  
+# TEST: MOVR
+# Expected: a=24 b=26 rslt=24 out=0 | Actual: a=24 b=26 rslt=24 out=0
+#  
+# TEST: AND
+# Expected: a=0010_1111 b=1011_0010 rslt=0010_0010 out=0 | Actual: a=101111 b=10110010 rslt=100010 out=0
+#  
+# TEST: AND: mask
+# Expected: a=1011_1001 b=1111_1111 rslt=1011_1001 out=0 | Actual: a=10111001 b=11111111 rslt=10111001 out=0
+#  
+# TEST: AND: clear
+# Expected: a=1011_1001 b=0 rslt=0 out=0 | Actual: a=10111001 b=0 rslt=0 out=0
+#  
+# ** Note: $finish    : alu_tb.sv(87)
+#    Time: 100 ns  Iteration: 0  Instance: /alu_tb
+# End time: 17:30:22 on May 08,2025, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 4
+End time: 17:30:22 on May 08,2025, Elapsed time: 0:00:01
+*** Summary *********************************************
+    qrun: Errors:   0, Warnings:   0
+    vlog: Errors:   0, Warnings:   0
+    vopt: Errors:   0, Warnings:   1
+    vsim: Errors:   0, Warnings:   4
+  Totals: Errors:   0, Warnings:   5

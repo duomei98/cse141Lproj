@@ -1,0 +1,229 @@
+m255
+K4
+z2
+Z0 !s99 nomlopt
+!s11f vlog 2024.3_1 2024.10, Oct 17 2024
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z1 d/home/runner
+valu
+Z2 2design.sv|testbench.sv
+Z3 DXx6 sv_std 3 std 0 22 9oUSJO;AeEaW`l:M@^WG92
+Z4 !s110 1746739821
+!i10b 1
+!s100 T?;Q2[kQR73aYD_UK=8gA2
+IUF>C^c6MF9fRJd>c?L]P00
+S1
+R1
+Z5 w1746739818
+8alu.sv
+Falu.sv
+!i122 0
+L0 3 66
+Z6 VDg1SIo80bB@j0V0VzS_@n1
+Z7 OL;L;2024.3_1;79
+r1
+!s85 0
+31
+Z8 !s108 1746739821.000000
+Z9 !s107 alu_tb.sv|top_level.sv|Control.sv|alu.sv|dat_mem.sv|instr_ROM.sv|PC.sv|reg_file.sv|testbench.sv|design.sv|
+Z10 !s90 -timescale|1ns/1ns|-mfcu|design.sv|testbench.sv|-work|qrun.out/work|-statslog|qrun.out/stats_log|-writesessionid|+qrun.out/top_dus|-csession=incr|
+!i113 0
+Z11 o-timescale 1ns/1ns -mfcu -work qrun.out/work
+Z12 tCvgOpt 0
+valu_tb
+R2
+R3
+R4
+!i10b 1
+!s100 ?DEzBXa5SAPHEjmB0gB0X2
+ICb?@aN?aURO^RHMS][Yai3
+S1
+R1
+R5
+8alu_tb.sv
+Falu_tb.sv
+!i122 0
+L0 2 88
+R6
+R7
+r1
+!s85 0
+31
+R8
+R9
+R10
+!i113 0
+R11
+R12
+vControl
+R2
+R3
+R4
+!i10b 1
+!s100 @[DHPRmLeOg^0onnGonQ@0
+IlGn2fckO@R_B`Xgo:c1mX1
+S1
+R1
+R5
+8Control.sv
+FControl.sv
+!i122 0
+L0 4 105
+R6
+R7
+r1
+!s85 0
+31
+R8
+R9
+R10
+!i113 0
+R11
+R12
+n@control
+vdat_mem
+R2
+R3
+R4
+!i10b 1
+!s100 FO_K=ni7g7R2KY467BT0n3
+IFC7GjHzF`S8Rj0FZn@m^a0
+S1
+R1
+R5
+8dat_mem.sv
+Fdat_mem.sv
+!i122 0
+L0 2 19
+R6
+R7
+r1
+!s85 0
+31
+R8
+R9
+R10
+!i113 0
+R11
+R12
+vinstr_ROM
+R2
+R3
+R4
+!i10b 1
+!s100 N@_FghG7PLiN]k]feZha91
+I:eK6il2IW6bU9Mi[@MCUo2
+S1
+R1
+R5
+8instr_ROM.sv
+Finstr_ROM.sv
+!i122 0
+L0 4 11
+R6
+R7
+r1
+!s85 0
+31
+R8
+R9
+R10
+!i113 0
+R11
+R12
+ninstr_@r@o@m
+vPC
+R2
+R3
+R4
+!i10b 1
+!s100 KVU57o^72JzKH0CeS48WR1
+IcAO=DA@W;2XFzB4]VT=fX2
+S1
+R1
+R5
+8PC.sv
+FPC.sv
+!i122 0
+L0 3 23
+R6
+R7
+r1
+!s85 0
+31
+R8
+R9
+R10
+!i113 0
+R11
+R12
+n@p@c
+Tqrun_opt
+R4
+V6BCk3WI]JYcmk?XX30PkD0
+04 6 4 work alu_tb fast 0
+04 9 4 work top_level fast 0
+R0
+!s12f OEM100
+!s12b OEM100
+!s124 OEM100
+!s135 nogc
+o-access=rw+/. -timescale 1ns/1ns -mfcu +acc=npr -work qrun.out/work
+R12
+nqrun_opt
+OL;O;2024.3_1;79
+vreg_file
+R2
+R3
+R4
+!i10b 1
+!s100 60kQ4bdT<Hb]^N^R]G9953
+ITJYK5lmLe=9PnIXYjiF2D0
+S1
+R1
+R5
+8reg_file.sv
+Freg_file.sv
+!i122 0
+L0 3 33
+R6
+R7
+r1
+!s85 0
+31
+R8
+R9
+R10
+!i113 0
+R11
+R12
+vtop_level
+R2
+R3
+R4
+!i10b 1
+!s100 Hd[2DPT]6HWk>JRl5^KhT0
+Ib5S`RJ:U91F8C13VQE?AL1
+S1
+R1
+R5
+8top_level.sv
+Ftop_level.sv
+!i122 0
+L0 2 160
+R6
+R7
+r1
+!s85 0
+31
+R8
+R9
+R10
+!i113 0
+R11
+R12
